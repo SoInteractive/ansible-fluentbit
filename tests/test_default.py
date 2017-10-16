@@ -2,8 +2,7 @@
 from testinfra.utils.ansible_runner import AnsibleRunner
 
 
-testtinfra_hosts = AnsibleRunner('.molecule/ansible_inventory').get_hosts(
-    'all')
+testinfra_hosts = AnsibleRunner('.molecule/ansible_inventory').get_hosts('all')
 
 
 def test_directories(File):
