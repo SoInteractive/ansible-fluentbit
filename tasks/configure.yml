@@ -22,4 +22,5 @@
     path: "/etc/td-agent-bit/td-agent-bit.conf"
     line: "@INCLUDE {{item.name}}.conf"
     state: present
+  changed_when: false
   with_items: "{{ fluentbit_inputs }}"
