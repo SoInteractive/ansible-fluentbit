@@ -27,13 +27,19 @@
     # Specify an optional 'Parsers' configuration file
     Parsers_File parsers.conf
 
+{% for input in fluentbit_inputs %}
+[INPUT]
+{% for key in input %}
+    {{ key }} {{ input[key] }}
+{% endfor %}
+{% endfor %}
 
 [OUTPUT]
     Name          forward
     Match         *
-    Host          "{{ fluentd_ip_addr }}"
+    Host          "{{ fluentbit_dest_ipaddr }}"
     Port          24284
     Shared_Key    secret
-    Self_Hostname flb.local
+    Self_Hostname "{{ ansible_nodename }}"
     tls           "{{ fluentbit_tls }}"
     tls.verify    "{{ fluentbit_tlsverify }}"

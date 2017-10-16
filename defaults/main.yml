@@ -1,6 +1,6 @@
 ---
 
-fluentd_ip_addr: 127.0.0.1
+fluentbit_dest_ipaddr: 127.0.0.1
 
 
 fluentbit_tls: "on"

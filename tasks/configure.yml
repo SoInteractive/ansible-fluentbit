@@ -8,19 +8,19 @@
   notify:
    - restart td-agent-bit
 
-- name: Copy additional config files
-  template:
-    src: additional.conf.j2
-    dest: "/etc/td-agent-bit/{{ item.name }}.conf"
-  with_items: "{{ fluentbit_inputs }}"
-  changed_when: false
-  notify:
-   - restart td-agent-bit
+# - name: Copy additional config files
+#   template:
+#     src: additional.conf.j2
+#     dest: "/etc/td-agent-bit/{{ item.name }}.conf"
+#   with_items: "{{ fluentbit_inputs }}"
+#   changed_when: false
+#   notify:
+#    - restart td-agent-bit
 
-- name: Include additional config files
-  lineinfile:
-    path: "/etc/td-agent-bit/td-agent-bit.conf"
-    line: "@INCLUDE {{item.name}}.conf"
-    state: present
-  changed_when: false
-  with_items: "{{ fluentbit_inputs }}"
+# - name: Include additional config files
+#   lineinfile:
+#     path: "/etc/td-agent-bit/td-agent-bit.conf"
+#     line: "@INCLUDE {{item.name}}.conf"
+#     state: present
+#   changed_when: false
+#   with_items: "{{ fluentbit_inputs }}"
