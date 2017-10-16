@@ -9,7 +9,15 @@
 
 - name: Copy additional config files
   template:
-    src: "{{ item }}"
-    dest: "/etc/td-agent-bit/{{ item.split('/')[-1] }}"
+    src: additional.conf.j2
+    dest: "/etc/td-agent-bit/{{ item.name }}.conf"
+  with_items: "{{ fluentbit_inputs }}"
   notify:
    - restart td-agent-bit
+
+- name: Include additional config files
+  lineinfile:
+    path: "/etc/td-agent-bit/td-agent-bit.conf"
+    line: "@INCLUDE {{item.name}}.conf"
+    state: present
+  with_items: "{{ fluentbit_inputs }}"

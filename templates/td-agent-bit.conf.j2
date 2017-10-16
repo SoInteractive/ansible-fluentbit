@@ -1,0 +1,49 @@
+[SERVICE]
+    # Flush
+    # =====
+    # Set an interval of seconds before to flush records to a destination
+    Flush        5
+
+    # Daemon
+    # ======
+    # Instruct Fluent Bit to run in foreground or background mode.
+    Daemon       Off
+
+    # Log_Level
+    # =========
+    # Set the verbosity level of the service, values can be:
+    #
+    # - error
+    # - warning
+    # - info
+    # - debug
+    # - trace
+    #
+    # By default 'info' is set, that means it includes 'error' and 'warning'.
+    Log_Level    info
+
+    # Parsers_File
+    # ============
+    # Specify an optional 'Parsers' configuration file
+    Parsers_File parsers.conf
+
+{% for input in fluentbit_inputs %}
+
+[INPUT]
+    Name {{ input.name }}
+    Tag  {{ input.tag }}
+    # Interval Sec
+    # ====
+    # Read interval (sec) Default: 1
+
+{% endfor %}
+
+[OUTPUT]
+    Name          forward
+    Match         *
+    Host          "{{ fluentd_ip_addr }}"
+    Port          24284
+    Shared_Key    secret
+    Self_Hostname flb.local
+    tls           "{{ fluentbit_tls }}"
+    tls.verify    "{{ fluentbit_tlsverify }}"
