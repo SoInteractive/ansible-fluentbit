@@ -2,12 +2,10 @@
 from testinfra.utils.ansible_runner import AnsibleRunner
 
 
+testtinfra_hosts = AnsibleRunner('.molecule/ansible_inventory').get_hosts(
+    'all')
 
-testtinfra_hosts = AnsibleRunner('.molecule/ansible_inventory').get_hosts('all')
 
-
-
- 
 def test_directories(File):
     present = [
         "/etc/td-agent-bit"
@@ -49,4 +47,3 @@ def test_packages(Package):
         for package in present:
             p = Package(package)
             assert p.is_installed
-

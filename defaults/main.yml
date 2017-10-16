@@ -8,6 +8,5 @@ fluentbit_tlsverify: "off"
 
 fluentbit_inputs:
   - {"name": "systemd", "tag": "systemd", "systemd_filter": "_SYSTEMD_UNIT=docker.service"}
-  - {"name": "tail", "tag": "docker", "path": "/var/lib/docker/containers/*/*.log"} 
+  - {"name": "tail", "tag": "docker", "path": "/var/lib/docker/containers/*/*.log"}
 # - {"name": "tail", "tag": "", "path": ""}
-

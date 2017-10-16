@@ -4,4 +4,3 @@
   service:
     name: td-agent-bit
     state: restarted
-
