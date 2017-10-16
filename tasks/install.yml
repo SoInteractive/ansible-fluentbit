@@ -28,3 +28,10 @@
       name: td-agent-bit
       state: present
   when: ansible_pkg_mgr == "yum"
+
+- name: Ensure fluentbit (td-agent-bit) service is enabled and started
+  service:
+    name: td-agent-bit
+    state: started
+    enabled: yes
+
