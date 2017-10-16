@@ -18,7 +18,7 @@ def test_directories(File):
 
 def test_files(File):
     present = [
-        "/etc/td-agent/td-agent-bit.conf"
+        "/etc/td-agent-bit/td-agent-bit.conf"
     ]
     if present:
         for file in present:
