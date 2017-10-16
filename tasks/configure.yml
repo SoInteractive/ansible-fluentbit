@@ -1,0 +1,15 @@
+---
+
+- name: Copy new td-agent-bit.conf from role's default
+  copy:
+    src: td-agent-bit.conf
+    dest: "/etc/td-agent-bit/td-agent-bit.conf"
+  notify:
+   - restart td-agent-bit
+
+- name: Copy additional config files
+  template:
+    src: "{{ item }}"
+    dest: "/etc/td-agent-bit/{{ item.split('/')[-1] }}"
+  notify:
+   - restart td-agent-bit
