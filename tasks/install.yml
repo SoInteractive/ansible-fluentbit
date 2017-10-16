@@ -1,0 +1,30 @@
+---
+- block:
+  - name: Add apt key
+    apt_key:
+      url: http://packages.fluentbit.io/fluentbit.key
+      state: present
+
+  - name: Add repo
+    apt_repository:
+      repo: deb http://packages.fluentbit.io/ubuntu xenial main
+
+  - name: Install fluentbit
+    apt:
+      name: td-agent-bit
+      state: present
+  when: ansible_pkg_mgr == "apt"
+
+- block:
+  - name: Add yum repository
+    yum_repository:
+      name: TD Agent Bit
+      baseurl: http://packages.fluentbit.io/centos/7
+      gpgcheck: yes
+      gpgkey: http://packages.fluentbit.io/fluentbit.key
+
+  - name: Install fluentbit
+    yum:
+      name: td-agent-bit
+      state: present
+  when: ansible_pkg_mgr == "yum"
