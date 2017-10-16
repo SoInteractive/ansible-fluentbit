@@ -1,8 +1,8 @@
 ---
 
 - name: Copy new td-agent-bit.conf from role's default
-  copy:
-    src: td-agent-bit.conf
+  template:
+    src: td-agent-bit.conf.j2
     dest: "/etc/td-agent-bit/td-agent-bit.conf"
   notify:
    - restart td-agent-bit

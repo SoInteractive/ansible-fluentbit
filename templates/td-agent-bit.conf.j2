@@ -27,16 +27,6 @@
     # Specify an optional 'Parsers' configuration file
     Parsers_File parsers.conf
 
-{% for input in fluentbit_inputs %}
-
-[INPUT]
-    Name {{ input.name }}
-    Tag  {{ input.tag }}
-    # Interval Sec
-    # ====
-    # Read interval (sec) Default: 1
-
-{% endfor %}
 
 [OUTPUT]
     Name          forward

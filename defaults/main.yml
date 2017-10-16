@@ -1,6 +1,6 @@
 ---
 
-fluentd_ipaddr: 127.0.0.1
+fluentd_ip_addr: 127.0.0.1
 
 
 fluentbit_tls: "on"
@@ -8,6 +8,6 @@ fluentbit_tlsverify: "off"
 
 fluentbit_inputs:
   - {"name": "systemd", "tag": "systemd", "systemd_filter": "_SYSTEMD_UNIT=docker.service"}
-  - {"name": "tail", "tag": "docker", "path": "/var/lib/docker/containers/*/*.logi"} 
+  - {"name": "tail", "tag": "docker", "path": "/var/lib/docker/containers/*/*.log"} 
 # - {"name": "tail", "tag": "", "path": ""}
 

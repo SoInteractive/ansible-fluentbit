@@ -18,10 +18,12 @@
 - block:
   - name: Add yum repository
     yum_repository:
-      name: TD Agent Bit
+      name: TD_Agent_Bit
       baseurl: http://packages.fluentbit.io/centos/7
       gpgcheck: yes
       gpgkey: http://packages.fluentbit.io/fluentbit.key
+      description: fluent bit  repo
+      enabled: yes
 
   - name: Install fluentbit
     yum:
