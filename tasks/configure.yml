@@ -4,7 +4,6 @@
   template:
     src: td-agent-bit.conf.j2
     dest: "/etc/td-agent-bit/td-agent-bit.conf"
-  changed_when: false
   notify:
    - restart td-agent-bit
 
