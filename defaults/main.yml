@@ -7,6 +7,6 @@ fluentbit_tls: "on"
 fluentbit_tlsverify: "off"
 
 fluentbit_inputs:
-  - {"Name": "systemd", "Tag": "systemd", "systemd_filter": "_SYSTEMD_UNIT=docker.service"}
+  - {"Name": "systemd", "Tag": "systemd"}
   - {"Name": "forward", "Tag": "docker", "Listen": "0.0.0.0", "Port": "24224"}
 # - {"name": "tail", "tag": "", "path": ""}
