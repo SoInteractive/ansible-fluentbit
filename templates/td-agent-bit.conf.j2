@@ -1,3 +1,4 @@
+# {{ ansible_managed }} 
 [SERVICE]
     # Flush
     # =====
@@ -38,7 +39,7 @@
     Name          forward
     Match         *
     Host          "{{ fluentbit_dest_ipaddr }}"
-    Port          24284
+    Port          "{{ fluentbit_dest_port }}"
     Shared_Key    secret
     Self_Hostname "{{ ansible_nodename }}"
     tls           "{{ fluentbit_tls }}"
