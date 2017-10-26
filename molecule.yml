@@ -1,0 +1,18 @@
+---
+ansible:
+  playbook: tests/playbook.yml
+ # verbose: vvv
+driver:
+  name: docker
+verifier:
+  name: testinfra
+docker:
+  containers:
+    - name: fluentbit-xenial
+      image: solita/ubuntu-systemd
+      image_version: 16.04
+      privileged: true
+    - name: fluentbit-centos
+      image: centos/systemd
+      image_version: latest
+      privileged: true
