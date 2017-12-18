@@ -18,7 +18,8 @@ def test_directories(host):
 
 def test_files(host):
     present = [
-        "/etc/td-agent-bit/td-agent-bit.conf"
+        "/etc/td-agent-bit/td-agent-bit.conf",
+        "/etc/rsyslog.d/90-logforwarder.conf"
     ]
     if present:
         for file in present:
@@ -40,7 +41,8 @@ def test_service(host):
 
 def test_packages(host):
     present = [
-        "td-agent-bit"
+        "td-agent-bit",
+        "rsyslog"
     ]
     if present:
         for package in present:
