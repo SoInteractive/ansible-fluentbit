@@ -10,3 +10,6 @@ fluentbit_inputs:
   - {"Name": "systemd", "Tag": "systemd"}
   - {"Name": "forward", "Tag": "docker", "Listen": "0.0.0.0", "Port": "24224"}
 # - {"name": "tail", "tag": "", "path": ""}
+
+fluentbit_log_aggregator: ""
+#fluentbit_log_agregator: "127.0.0.1:10514"

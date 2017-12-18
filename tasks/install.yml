@@ -1,4 +1,9 @@
 ---
+- name: Ensure rsyslog is installed
+  package:
+    name: rsyslog
+    state: installed
+
 - block:
   - name: Add apt key
     apt_key:
