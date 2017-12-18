@@ -13,4 +13,3 @@ fluentbit_inputs:
 
 fluentbit_log_aggregator: ""
 #fluentbit_log_agregator: "127.0.0.1:10514"
-
