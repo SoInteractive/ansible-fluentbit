@@ -12,3 +12,5 @@ fluentbit_inputs:
 # - {"name": "tail", "tag": "", "path": ""}
 
 fluentbit_log_aggregator: ""
+#fluentbit_log_agregator: "127.0.0.1:10514"
+
