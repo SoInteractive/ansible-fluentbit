@@ -38,9 +38,9 @@
 [OUTPUT]
     Name          forward
     Match         *
-    Host          {{ fluentbit_dest_ipaddr }}
-    Port          {{ fluentbit_dest_port }}
+    Host          "{{ fluentbit_dest_ipaddr }}"
+    Port          "{{ fluentbit_dest_port }}"
     Shared_Key    secret
-    Self_Hostname {{ ansible_nodename }}
-    tls           {{ fluentbit_tls }}
-    tls.verify    {{ fluentbit_tlsverify }}
+    Self_Hostname "{{ ansible_nodename }}"
+    tls           "{{ fluentbit_tls }}"
+    tls.verify    "{{ fluentbit_tlsverify }}"
