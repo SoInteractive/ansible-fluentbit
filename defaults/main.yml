@@ -11,5 +11,8 @@ fluentbit_inputs:
   - {"Name": "forward", "Tag": "docker", "Listen": "0.0.0.0", "Port": "24224"}
 # - {"name": "tail", "tag": "", "path": ""}
 
+fluentbit_outputs:
+  - {"Name": "forward", "Host": "127.0.0.1", "Port": "24224", "Time_as_Integer":"True"}
+
 fluentbit_log_aggregator: ""
 #fluentbit_log_agregator: "127.0.0.1:10514"
