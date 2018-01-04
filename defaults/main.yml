@@ -3,7 +3,7 @@
 fluentbit_dest_ipaddr: 127.0.0.1
 fluentbit_dest_port: 24224
 
-fluentbit_tls: "on"
+fluentbit_tls: "off"
 fluentbit_tlsverify: "off"
 
 fluentbit_inputs:
