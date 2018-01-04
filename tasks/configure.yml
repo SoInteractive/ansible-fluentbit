@@ -11,7 +11,7 @@
     dest: /etc/systemd/journald.conf
     line: "ForwardToSyslog=yes"
   notify: restart journald
-
+  
 - name: Copy new td-agent-bit.conf from role's default
   template:
     src: td-agent-bit.conf.j2
