@@ -2,6 +2,10 @@ Ansible Role: fluentbit
 =======================
 
 
+# :warning: IMPORTANT NOTICE
+
+THIS PROJECT IS ABANDONED. WE DO NOT ACCEPT ANY NEW ISSUES AND/OR PULL REQUESTS.
+
 
 Examples
 --------
